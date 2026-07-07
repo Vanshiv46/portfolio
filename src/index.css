@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+:root {
+  /* Dark theme (default) — space-separated RGB for Tailwind's rgb(var() / alpha) */
+  --color-ink: 11 13 16;
+  --color-surface: 20 23 27;
+  --color-surface2: 27 31 36;
+  --color-line: 38 43 49;
+  --color-text: 238 241 243;
+  --color-muted: 139 147 161;
+  --color-amber: 232 163 61;
+  --color-amberDim: 169 122 59;
+}
+
+[data-theme="light"] {
+  --color-ink: 250 249 246;
+  --color-surface: 255 255 255;
+  --color-surface2: 244 242 237;
+  --color-line: 226 222 214;
+  --color-text: 28 26 23;
+  --color-muted: 107 99 89;
+  --color-amber: 176 108 33;
+  --color-amberDim: 196 138 66;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(var(--color-ink));
+  color: rgb(var(--color-text));
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+::selection {
+  background: rgb(var(--color-amber));
+  color: rgb(var(--color-ink));
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgb(var(--color-ink)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--color-line)); border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Blinking cursor for the typing signature in the hero */
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
