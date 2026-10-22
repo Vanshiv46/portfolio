@@ -22,6 +22,12 @@ export default function CV() {
           <Download size={16} />
           Download CV
         </a>
+        <p className="text-xs text-muted font-mono">
+          Other versions:{" "}
+          <a href="/cv-ai-data-science.pdf" download className="text-amber hover:underline">AI &amp; Data Science</a>
+          {" · "}
+          <a href="/cv-ats.pdf" download className="text-amber hover:underline">ATS (1-page)</a>
+        </p>
       </div>
 
       <div className="mt-6 rounded-xl overflow-hidden border border-line bg-surface">

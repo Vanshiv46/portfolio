@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
-import { profile, projects, experience } from "../data/content";
+import { profile, projects, experience, leadership, education } from "../data/content";
 import GitGraph from "../components/GitGraph";
 import { GithubIcon } from "../components/icons";
 
@@ -60,7 +60,7 @@ export default function Home() {
         <h2 className="font-display text-2xl text-text mb-6">Experience</h2>
         <div className="flex flex-col gap-0">
           {experience.map((e, i) => (
-            <div key={e.role} className="flex gap-5">
+            <div key={e.role + e.org} className="flex gap-5">
               <div className="flex flex-col items-center">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber mt-1.5 shrink-0" />
                 {i !== experience.length - 1 && (
@@ -68,14 +68,18 @@ export default function Home() {
                 )}
               </div>
               <div className="pb-8">
-                <p className="font-mono text-xs text-amber uppercase tracking-wide">
-                  {e.period}
-                </p>
+                {e.period && (
+                  <p className="font-mono text-xs text-amber uppercase tracking-wide">
+                    {e.period}
+                  </p>
+                )}
                 <h3 className="font-display text-lg text-text mt-1">{e.role}</h3>
                 <p className="text-sm text-muted mt-0.5">{e.org}</p>
-                <p className="text-sm text-muted leading-relaxed mt-2 max-w-xl">
-                  {e.description}
-                </p>
+                {e.description && (
+                  <p className="text-sm text-muted leading-relaxed mt-2 max-w-xl">
+                    {e.description}
+                  </p>
+                )}
               </div>
             </div>
           ))}
@@ -83,11 +87,48 @@ export default function Home() {
       </div>
 
       <div className="mt-4">
+        <h2 className="font-display text-2xl text-text mb-6">Leadership & Responsibilities</h2>
+        <div className="flex flex-col gap-0">
+          {leadership.map((e, i) => (
+            <div key={e.role + e.org} className="flex gap-5">
+              <div className="flex flex-col items-center">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber mt-1.5 shrink-0" />
+                {i !== leadership.length - 1 && (
+                  <span className="w-px flex-1 bg-line" />
+                )}
+              </div>
+              <div className="pb-8">
+                {e.period && (
+                  <p className="font-mono text-xs text-amber uppercase tracking-wide">
+                    {e.period}
+                  </p>
+                )}
+                <h3 className="font-display text-lg text-text mt-1">{e.role}</h3>
+                <p className="text-sm text-muted mt-0.5">{e.org}</p>
+                {e.description && (
+                  <p className="text-sm text-muted leading-relaxed mt-2 max-w-xl">
+                    {e.description}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 mb-16">
+        <h2 className="font-display text-2xl text-text mb-4">Education</h2>
+        <p className="font-mono text-xs text-amber uppercase tracking-wide">{education.period}</p>
+        <h3 className="font-display text-lg text-text mt-1">{education.degree}</h3>
+        <p className="text-sm text-muted mt-0.5">{education.school}</p>
+      </div>
+
+      <div className="mt-4">
         <h2 className="font-display text-2xl text-text mb-6 flex items-center gap-3">
           Featured Work <span className="text-amber font-mono text-lg">{"</>"}</span>
         </h2>
         <div className="flex flex-col gap-4">
-          {projects.slice(0, 2).map((p) => (
+          {projects.slice(0, 3).map((p) => (
             <a
               key={p.title}
               href={p.link}
