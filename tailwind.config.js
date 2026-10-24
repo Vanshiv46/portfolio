@@ -1,26 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        ink: "rgb(var(--color-ink) / <alpha-value>)",
-        surface: "rgb(var(--color-surface) / <alpha-value>)",
-        surface2: "rgb(var(--color-surface2) / <alpha-value>)",
-        line: "rgb(var(--color-line) / <alpha-value>)",
-        text: "rgb(var(--color-text) / <alpha-value>)",
-        muted: "rgb(var(--color-muted) / <alpha-value>)",
-        amber: "rgb(var(--color-amber) / <alpha-value>)",
-        amberDim: "rgb(var(--color-amberDim) / <alpha-value>)",
+        ink: "#070606",
+        panel: "#100d0d",
+        line: "#2a2020",
+        text: "#f1ecea",
+        muted: "#a39a98",
+        red: { DEFAULT: "#d4202c", deep: "#7a0d15" },
       },
       fontFamily: {
-        display: ["'Fraunces'", "serif"],
-        body: ["'Inter'", "sans-serif"],
-        mono: ["'JetBrains Mono'", "monospace"],
+        display: ["'Anton'", "Impact", "sans-serif"],
+        body: ["'Outfit'", "system-ui", "sans-serif"],
+        script: ["'Mrs Saint Delafield'", "cursive"],
       },
     },
   },
   plugins: [],
 }
-

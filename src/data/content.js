@@ -3,9 +3,8 @@
 
 export const profile = {
   name: "Vanshiv Garg",
-  role: "B.Tech CSE @ IIIT Una · AI/ML & Full Stack",
-  tagline:
-    "Second-year B.Tech Computer Science student at IIIT Una. Research intern at IIT Guwahati (Temporal Action Segmentation, PyTorch) and CAIR, IIT Mandi — building AI systems and full-stack web apps.",
+  role: "B.Tech CSE student at IIIT Una",
+  tagline: "Second-year computer science student at IIIT Una. I learn by building: research internships, projects and student communities.",
   bio: `I believe the most valuable education happens beyond the classroom. In my first year, I co-coordinated
 MERAKI 2026 — the annual tech fest of IIIT Una — becoming the first 1st-year student to hold that role, managing
 Hackathons and Robo Drive alongside senior teams. I also co-coordinated Mridang 2026 and lead social media for IIIT Una.
@@ -17,7 +16,7 @@ I'm a Google Gemini Campus Ambassador and an executive member across all seven s
   phone: "+91 84376-56156",
   github: "https://github.com/Vanshiv46",
   linkedin: "https://www.linkedin.com/in/vanshivgarg/",
-  photo: "/profile.jpg",
+  photo: "/hero.png",
 };
 
 export const experience = [
